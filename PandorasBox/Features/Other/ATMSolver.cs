@@ -32,30 +32,15 @@ namespace PandorasBox.Features.Other
                 if (Environment.TickCount64 >= Throttler)
                 {
                     if (ChatLogIsFocused())
-                        WindowsKeypress.SendKeypress(MapKeys(System.Windows.Forms.Keys.Escape));
+                        WindowsKeypress.SendKeypress(System.Windows.Forms.Keys.Escape);
 
-                    WindowsKeypress.SendKeypress(MapKeys(System.Windows.Forms.Keys.A)); // 嘗試解析 QTE
+                    WindowsKeypress.SendKeypress(System.Windows.Forms.Keys.A); //Mashes to try and resolve the QTE
                     Throttler = Environment.TickCount64 + random.Next(25, 50);
                 }
             }
             else
             {
                 EnableDirectChatIfNeeded();
-            }
-        }
-
-        // 定義映射函數
-        private ECommons.Interop.LimitedKeys MapKeys(System.Windows.Forms.Keys key)
-        {
-            switch (key)
-            {
-                case System.Windows.Forms.Keys.A:
-                    return ECommons.Interop.LimitedKeys.A;
-                case System.Windows.Forms.Keys.Escape:
-                    return ECommons.Interop.LimitedKeys.Escape;
-                // 根據需要添加更多映射
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(key), $"無法映射的按鍵: {key}");
             }
         }
 
