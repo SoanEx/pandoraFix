@@ -1,16 +1,21 @@
 {
-    "Author": "Taurenkey (Puni.sh)",
-    "Name": "Pandora's Box",
-    "Punchline": "Do you dare to open Pandora's Box?",
-    "Description": "Pandora's Box is a collection of major QoL tweaks and adjustments.\n\nOpen the box with /pandora",
-    "InternalName": "Pandora's Box",
-    "ApplicableVersion": "any",
-    "DalamudApiLevel": 10,
-    "IconUrl": "https://love.puni.sh/resources/pandora.png",
-    "RepoUrl": "https://github.com/PunishXIV/PandorasBox",
-    "DownloadLinkTesting": "https://love.puni.sh/plugins/Pandora/Testing/latest.zip",
-    "Tags": [
-        "punish",
-        "plugin"
-    ]
+  "Author": "Taurenkey (Puni.sh)",
+  "Name": "Pandora's Box",
+  "InternalName": "PandorasBox",
+  "AssemblyVersion": "1.6.0.7",
+  "Description": "Pandora's Box is a collection of major QoL tweaks and adjustments.\n\nOpen the box with /pandora",
+  "ApplicableVersion": "any",
+  "RepoUrl": "https://github.com/PunishXIV/PandorasBox",
+  "Tags": [
+    "punish",
+    "plugin"
+  ],
+  "DalamudApiLevel": 10,
+  "LoadRequiredState": 0,
+  "LoadSync": false,
+  "CanUnloadAsync": false,
+  "LoadPriority": 0,
+  "IconUrl": "https://love.puni.sh/resources/pandora.png",
+  "Punchline": "Do you dare to open Pandora's Box?",
+  "AcceptsFeedback": true
 }

@@ -965,6 +965,36 @@
             <param name="language">The language.</param>
             <returns>The ExcelRow in the specified language.</returns>
         </member>
+        <member name="M:ECommons.ExcelServices.ExcelItemHelper.Get(System.Int32)">
+            <summary>
+            Gets <see cref="T:Lumina.Excel.GeneratedSheets.Item"/> by id or null if not found.
+            </summary>
+            <param name="rowId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommons.ExcelServices.ExcelItemHelper.Get(System.UInt32)">
+            <summary>
+            Gets <see cref="T:Lumina.Excel.GeneratedSheets.Item"/> by id or null if not found.
+            </summary>
+            <param name="rowId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommons.ExcelServices.ExcelItemHelper.GetName(System.UInt32,System.Boolean)">
+            <summary>
+            Gets item name. If name or item is missing, prints item's ID. Item names are stripped off non-text payloads. Results are cached.
+            </summary>
+            <param name="id"></param>
+            <param name="includeID">Force include ID into text</param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommons.ExcelServices.ExcelItemHelper.GetName(Lumina.Excel.GeneratedSheets.Item,System.Boolean)">
+            <summary>
+            Gets item name. If name is missing, prints item's ID. Item names are stripped off non-text payloads. Results are cached.
+            </summary>
+            <param name="item"></param>
+            <param name="includeID"></param>
+            <returns></returns>
+        </member>
         <member name="M:ECommons.ExcelServices.ExcelTerritoryHelper.IsSanctuary(System.UInt32)">
             <summary>
             Checks if territory belongs to main cities, inns, residential areas or houses. 
@@ -1194,6 +1224,24 @@
             <summary>
             Pictomancer 
             </summary>
+        </member>
+        <member name="T:ECommons.EzContextMenu.ContextMenuPrefixRemover">
+            <summary>
+            A helper class to remove context menu prefix that is required by Dalamud. <br></br>
+            While removing prefix, please still make sure to give an user indication that menu item is added by the plugin.
+            </summary>
+        </member>
+        <member name="M:ECommons.EzContextMenu.ContextMenuPrefixRemover.Initialize">
+            <summary>
+            Manual initialization is optional. Initialization will be automatically performed upon first call of <see cref="M:ECommons.EzContextMenu.ContextMenuPrefixRemover.RemovePrefix(Dalamud.Game.Gui.ContextMenu.MenuItem)"/> method.
+            </summary>
+        </member>
+        <member name="M:ECommons.EzContextMenu.ContextMenuPrefixRemover.RemovePrefix(Dalamud.Game.Gui.ContextMenu.MenuItem)">
+            <summary>
+            Call this extension method to remove prefix from menu item.
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
         </member>
         <member name="T:ECommons.EzEventManager.EzFrameworkUpdate">
             <summary>
@@ -1785,16 +1833,6 @@
             <param name="AddonPtr"></param>
             <returns></returns>
         </member>
-        <member name="M:ECommons.GenericHelpers.TryGetAddonByName``1(System.String,System.Int32,``0*@)">
-            <summary>
-            Attempts to get first instance of addon by name.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="Addon"></param>
-            <param name="index"></param>
-            <param name="AddonPtr"></param>
-            <returns></returns>
-        </member>
         <member name="M:ECommons.GenericHelpers.IsSelectItemEnabled(FFXIVClientStructs.FFXIV.Component.GUI.AtkTextNode*)">
             <summary>
             Attempts to find out whether SelectString entry is enabled based on text color. 
@@ -2342,6 +2380,29 @@
             and does not contain branching instructions, so it's well suited for use in tight loops as well.
             </remarks>
         </member>
+        <member name="M:ECommons.MathHelpers.MathHelper.GetRelativeAngle(System.Numerics.Vector3,System.Numerics.Vector3)">
+            <summary>
+            Degrees
+            </summary>
+            <param name="origin"></param>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommons.MathHelpers.MathHelper.GetRelativeAngle(System.Numerics.Vector2,System.Numerics.Vector2)">
+            <summary>
+            Degrees
+            </summary>
+            <param name="origin"></param>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommons.MathHelpers.MathHelper.GetCardinalDirection(System.Single)">
+            <summary>
+            From angle in degrees
+            </summary>
+            <param name="angle">Degrees</param>
+            <returns></returns>
+        </member>
         <member name="M:ECommons.Reflection.DalamudReflector.RegisterOnInstalledPluginsChangedEvents(System.Action[])">
             <summary>
             Registers actions that will be triggered upon any installed plugin state change. Plugin monitoring will begin upon registering any actions.
@@ -2531,68 +2592,6 @@
             <param name="target">Instance object that is hosting the method. Pass null if a method is static.</param>
             <returns></returns>
         </member>
-        <member name="T:ECommons.Resources.Lang">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:ECommons.Resources.Lang.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:ECommons.Resources.Lang.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:ECommons.Resources.Lang.Context_CryptoDonation">
-            <summary>
-              Looks up a localized string similar to Donate via Cryptocurrency.
-            </summary>
-        </member>
-        <member name="P:ECommons.Resources.Lang.Context_ExploreOtherPlugins">
-            <summary>
-              Looks up a localized string similar to Explore other NightmareXIV plugins.
-            </summary>
-        </member>
-        <member name="P:ECommons.Resources.Lang.Context_JoinDiscord">
-            <summary>
-              Looks up a localized string similar to Join NightmareXIV Discord.
-            </summary>
-        </member>
-        <member name="P:ECommons.Resources.Lang.Context_OneTimeDonate">
-            <summary>
-              Looks up a localized string similar to Donate one-time via Ko-Fi.
-            </summary>
-        </member>
-        <member name="P:ECommons.Resources.Lang.Context_Subscribe">
-            <summary>
-              Looks up a localized string similar to Subscribe on Patreon.
-            </summary>
-        </member>
-        <member name="P:ECommons.Resources.Lang.JoinPatreon">
-            <summary>
-              Looks up a localized string similar to Join Patreon.
-            </summary>
-        </member>
-        <member name="P:ECommons.Resources.Lang.PatreonButtonTooltip">
-             <summary>
-               Looks up a localized string similar to If you like this plugin, please consider supporting it via NightmareXIV Patreon or via other means! This will help the developer to keep it updated and maintained. And you will get additional benefits, such as priority support, access to private plugins and priority feature requests as well.
-            
-            Left click - to go to Patreon;
-            Right click - see all options.
-             </summary>
-        </member>
-        <member name="P:ECommons.Resources.Lang.SmallPatreonButtonTooltip">
-             <summary>
-               Looks up a localized string similar to If you like this plugin, please consider supporting it.
-            
-            Left click - to go to Patreon;
-            Right click - see other options.
-             </summary>
-        </member>
         <member name="T:ECommons.Schedulers.ThreadPool">
             <summary>
             A helper to let you have your own simple thread pool.
@@ -2604,6 +2603,11 @@
             </summary>
             <param name="task">An action to run.</param>
             <param name="onCompletion">If specified, will be executed after completion of main action. If specified, no errors will be printed in log, instead if any occurs it will be passed into an action as an argument.</param>
+        </member>
+        <member name="T:ECommons.Singletons.PriorityAttribute">
+            <summary>
+            Sets service creation priority. Default is 0; the less is priority, the later will service be loaded, and earlier - disposed.
+            </summary>
         </member>
         <member name="T:ECommons.Singletons.SingletonServiceManager">
             <summary>
