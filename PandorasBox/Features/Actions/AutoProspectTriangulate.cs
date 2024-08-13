@@ -26,14 +26,13 @@ namespace PandorasBox.Features.Actions
 
         public Configs Config { get; private set; }
 
-        
         private void ActivateBuff(uint? jobValue)
         {
             if (jobValue is null) return;
-            if (jobValue is not (16 or 17)) return;
+            if (jobValue is not (16 or 17)) return; // 16 是採礦工，17 是園藝工
             if (Svc.Condition[Dalamud.Game.ClientState.Conditions.ConditionFlag.BetweenAreas]) return;
             TaskManager.DelayNext(this.GetType().Name, (int)(Config.ThrottleF * 1000));
-            var am = ActionManager.Instance();   
+            var am = ActionManager.Instance();
             if (Svc.ClientState.LocalPlayer?.StatusList.Where(x => x.StatusId == 217 || x.StatusId == 225).Count() == 2)
                 return;
             if (Svc.Condition[Dalamud.Game.ClientState.Conditions.ConditionFlag.Gathering])
@@ -42,25 +41,27 @@ namespace PandorasBox.Features.Actions
                 return;
             }
 
-            if (jobValue == 16 && am->GetActionStatus(ActionType.Action, 210) == 0)
+            // 無論當前職業，啟動「山岳之真實」和「森林之真實」
+            if (am->GetActionStatus(ActionType.Action, 210) == 0)
             {
-                TaskManager.Enqueue(() => am->UseAction(ActionType.Action, 210));
-                if (Config.AddTruth && am->GetActionStatus(ActionType.Action, 221) == 0)
-                {
-                   TaskManager.Enqueue(() => am->UseAction(ActionType.Action, 221));
-                }
-                return;
+                TaskManager.Enqueue(() => am->UseAction(ActionType.Action, 210)); // 啟動Prospect
             }
-            if (jobValue == 17 && am->GetActionStatus(ActionType.Action, 227) == 0)
+            if (am->GetActionStatus(ActionType.Action, 227) == 0)
             {
-                TaskManager.Enqueue(() => am->UseAction(ActionType.Action, 227));
-                if (Config.AddTruth && am->GetActionStatus(ActionType.Action, 238) == 0)
-                {
-                    TaskManager.Enqueue(() => am->UseAction(ActionType.Action, 238));
-                }
-                return;
+                TaskManager.Enqueue(() => am->UseAction(ActionType.Action, 227)); // 啟動Triangulate
             }
 
+            if (Config.AddTruth)
+            {
+                if (am->GetActionStatus(ActionType.Action, 221) == 0)
+                {
+                    TaskManager.Enqueue(() => am->UseAction(ActionType.Action, 221)); // 啟動「山岳之真實」
+                }
+                if (am->GetActionStatus(ActionType.Action, 238) == 0)
+                {
+                    TaskManager.Enqueue(() => am->UseAction(ActionType.Action, 238)); // 啟動「森林之真實」
+                }
+            }
         }
 
         public override void Enable()
