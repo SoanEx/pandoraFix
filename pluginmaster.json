@@ -1,28 +1,25 @@
 [
     {
-        "Author": "Test",
-        "Name": "Test",
-        "InternalName": "Test",
-        "Description": "Test",
+        "Author": "bowedit",
+        "Name": "Test", // 保留你的插件名稱
+        "Punchline": "Allows you to automatically change your appearance based on various conditions.",
+        "Description": "Automates character appearance changes through rule-based presets, utilizing integration with other popular customization plugins. This enables seamless and context-sensitive transformations, enriching gameplay and increasing immersion.",
+        "Changelog": "- Fixed Honorific integration",
+        "IsHide": false,
+        "InternalName": "Test", // 保留你的插件內部名稱
+        "AssemblyVersion": "1.0.6.3",
+        "TestingAssemblyVersion": "1.0.5.2",
+        "IsTestingExclusive": false,
         "ApplicableVersion": "any",
         "DalamudApiLevel": 10,
-        "TestingDalamudApiLevel": 10,
-        "Tags": ["Test"],
-        "CategoryTags": ["Test"],
-        "LoadRequiredState": 0,
-        "LoadSync": false,
-        "CanUnloadAsync": false,
-        "LoadPriority": 0,
-        "IsTestingExclusive": false,
-        "IconUrl": "Test",
-        "Punchline": "Test",
-        "AcceptsFeedback": true,
-        "DownloadLinkInstall": "https://github.com/SoanEx/pandoraFix/releases/download/releaseb/latest.zip",
-        "AssemblyVersion": "Test",
-        "DownloadLinkUpdate": "https://github.com/SoanEx/pandoraFix/releases/download/releaseb/latest.zip",
-        "DownloadLinkTesting": "https://github.com/SoanEx/pandoraFix/releases/download/releaseb/latest.zip",
-        "TestingAssemblyVersion": "Test",
-        "DownloadCount": 0,
-        "Changelog": "Test"
+        "TestingDalamudApiLevel": 9,
+        "DownloadCount": 34706,
+        "LastUpdate": 1723087982,
+        "DownloadLinkInstall": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/tags/test1.zip", // 保留你的下載連結
+        "DownloadLinkUpdate": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/tags/test1.zip", // 保留你的更新連結
+        "DownloadLinkTesting": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/tags/test1.zip", // 保留你的測試連結
+        "SupportsProfiles": true,
+        "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/DynamicBridge/main/DynamicBridge/images/icon.png"
     }
 ]
+
