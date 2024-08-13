@@ -1,0 +1,28 @@
+[
+    {
+        "Author": "Test",
+        "Name": "Test",
+        "InternalName": "Test",
+        "Description": "Test",
+        "ApplicableVersion": "any",
+        "DalamudApiLevel": 10,
+        "TestingDalamudApiLevel": 10,
+        "Tags": ["Test"],
+        "CategoryTags": ["Test"],
+        "LoadRequiredState": 0,
+        "LoadSync": false,
+        "CanUnloadAsync": false,
+        "LoadPriority": 0,
+        "IsTestingExclusive": false,
+        "IconUrl": "Test",
+        "Punchline": "Test",
+        "AcceptsFeedback": true,
+        "DownloadLinkInstall": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/heads/master.zip",
+        "AssemblyVersion": "Test",
+        "DownloadLinkUpdate": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/heads/master.zip",
+        "DownloadLinkTesting": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/heads/master.zip",
+        "TestingAssemblyVersion": "Test",
+        "DownloadCount": 0,
+        "Changelog": "Test"
+    }
+]
