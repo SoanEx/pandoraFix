@@ -17,10 +17,10 @@
         "IconUrl": "Test",
         "Punchline": "Test",
         "AcceptsFeedback": true,
-        "DownloadLinkInstall": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/heads/master.zip",
+        "DownloadLinkInstall": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/tags/test1.zip",
         "AssemblyVersion": "Test",
-        "DownloadLinkUpdate": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/heads/master.zip",
-        "DownloadLinkTesting": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/heads/master.zip",
+        "DownloadLinkUpdate": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/tags/test1.zip",
+        "DownloadLinkTesting": "https://github.com/SoanEx/PandorasBoxEdit/archive/refs/tags/test1.zip",
         "TestingAssemblyVersion": "Test",
         "DownloadCount": 0,
         "Changelog": "Test"
