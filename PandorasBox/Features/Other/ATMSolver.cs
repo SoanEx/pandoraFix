@@ -1,5 +1,6 @@
 using ECommons.Automation;
 using ECommons.DalamudServices;
+using ECommons.Interop;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using PandorasBox.FeaturesSetup;
 using System;
@@ -25,16 +26,17 @@ namespace PandorasBox.Features.Other
 
         private unsafe void RunFeature(IFramework framework)
         {
-            if ((TryGetAddonByName<AtkUnitBase>("QTE", out var addon) && addon->IsVisible) || TryGetAddonByName<AtkUnitBase>("QTE", 2, out var addon2) && addon2->IsVisible)
+            // 調整 TryGetAddonByName 調用，移除第三個參數
+            if ((TryGetAddonByName<AtkUnitBase>("QTE", out var addon) && addon->IsVisible) || TryGetAddonByName<AtkUnitBase>("QTE", out var addon2) && addon2->IsVisible)
             {
                 DisableDirectChatIfNeeded();
 
                 if (Environment.TickCount64 >= Throttler)
                 {
                     if (ChatLogIsFocused())
-                        WindowsKeypress.SendKeypress(System.Windows.Forms.Keys.Escape);
+                        WindowsKeypress.SendKeypress(ConvertToLimitedKeys(System.Windows.Forms.Keys.Escape));
 
-                    WindowsKeypress.SendKeypress(System.Windows.Forms.Keys.A); //Mashes to try and resolve the QTE
+                    WindowsKeypress.SendKeypress(ConvertToLimitedKeys(System.Windows.Forms.Keys.A));
                     Throttler = Environment.TickCount64 + random.Next(25, 50);
                 }
             }
@@ -84,6 +86,17 @@ namespace PandorasBox.Features.Other
         {
             Svc.Framework.Update -= RunFeature;
             base.Disable();
+        }
+
+        private LimitedKeys ConvertToLimitedKeys(System.Windows.Forms.Keys key)
+        {
+            return key switch
+            {
+                System.Windows.Forms.Keys.A => LimitedKeys.A,
+                System.Windows.Forms.Keys.B => LimitedKeys.B,
+                System.Windows.Forms.Keys.Escape => LimitedKeys.Escape,
+                _ => throw new ArgumentException("Unsupported key"),
+            };
         }
     }
 }
